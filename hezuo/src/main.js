@@ -6,6 +6,8 @@ import router from './router'
 import vueaxios from 'vue-axios'
 import axios from 'axios'
 import Router from 'vue-router'
+import zlchild from '@/tang/zlchild'
+import VueLazyload from 'vue-lazyload'
 
 Vue.config.productionTip = false
 
@@ -14,9 +16,14 @@ Router.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 
-
+Vue.use(VueLazyload,{
+  preLoad:1.3,
+  error: '/static/img/ban.png',
+  loading: '/static/img/ban.png',
+  attempt: 1
+})
 Vue.use(vueaxios,axios)
-
+Vue.component('zlchild',zlchild)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
