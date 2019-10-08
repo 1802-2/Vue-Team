@@ -46,7 +46,7 @@
 	@import "../assets/css/rem.scss";
 	.scr{
 		width: 100vw;
-		height: 100vh;
+		height: calc(100vh - 2.5rem);
 		overflow: hidden;
 		.caipu-box{
 			width: 100%;
@@ -60,8 +60,15 @@
 				flex-wrap: wrap;
 				align-content: space-between;
 				margin-left: rem(20);
+				&>p:nth-child(1){
+					color: #000;
+					font-size: rem(30);
+					font-weight: 550;
+				}
 				&>p:nth-child(2){
 					width: 100%;
+					font-size: rem(28);
+					font-weight: 700;
 					color: red;
 				}
 				&>p:nth-child(3){
