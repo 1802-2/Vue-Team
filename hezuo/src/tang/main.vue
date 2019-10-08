@@ -2,11 +2,11 @@
 	<div>
 		<router-view/>
 		<ul class="tag">
-			<li>首页</li>
+			<li @click="sy">首页</li>
 			<li @click="fl">分类</li>
 			<li @click="cp">菜谱中心</li>
-			<li>购物车</li>
-			<li>我的美鲜</li>
+			<li @click="gw">购物车</li>
+			<li @click="my">我的美鲜</li>
 		</ul>
 	</div>
 </template>
@@ -19,6 +19,11 @@
 			}
 		},
 		methods:{
+			sy(){
+				this.$router.push({
+					name:'home'
+				})
+			},
 			fl(){
 				this.$router.push({
 					name:'fl'
@@ -27,6 +32,16 @@
 			cp(){
 				this.$router.push({
 					name:'caipu'
+				})
+			},
+			gw(){
+				this.$router.push({
+					name:'cart'
+				})
+			},
+			my(){
+				this.$router.push({
+					name:'ino'
 				})
 			}
 		}
@@ -44,6 +59,7 @@
 		left: 0;
 		display: flex;
 		justify-content: space-around;
+		align-items: center;
 		list-style: none;
 	}
 </style>

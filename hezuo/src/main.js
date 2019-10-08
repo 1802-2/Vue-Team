@@ -9,6 +9,7 @@ import Router from 'vue-router'
 import zlchild from '@/tang/zlchild'
 import VueLazyload from 'vue-lazyload'
 
+
 Vue.config.productionTip = false
 
 const originalPush = Router.prototype.push
@@ -22,6 +23,14 @@ Vue.use(VueLazyload,{
   loading: '/static/img/ban.png',
   attempt: 1
 })
+
+import { Swipe, SwipeItem } from 'mint-ui';
+import "mint-ui/lib/style.css"
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
+
+
+
 Vue.use(vueaxios,axios)
 Vue.component('zlchild',zlchild)
 /* eslint-disable no-new */

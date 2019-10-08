@@ -8,7 +8,7 @@
 			<span>销量</span>
 			<span>价格</span>
 		</div>
-		<div v-for="(item,index) in zldata" class="zl-lists">
+		<div v-for="(item,index) in zldata" class="zl-lists" @click="xq(item)">
 			<img v-lazy="item.img" alt="">
 			<div>
 				<p>{{item.name}}</p>
@@ -37,6 +37,14 @@
 		methods:{
 			out(){
 				this.flag = !this.flag
+			},
+			xq(item){
+				this.$router.push({
+					name:'xq',
+					params:{
+						obj:item
+					}
+				})
 			}
 		},
 		created() {
